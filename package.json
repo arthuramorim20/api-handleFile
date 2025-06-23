@@ -1,0 +1,17 @@
+{
+  "name": "lista-telefonica-iin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^24.0.3",
+    "express": "^5.1.0"
+  }
+}
