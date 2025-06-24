@@ -11,11 +11,10 @@ class Routes {
     constructor () {
         this.router = Router();
         this.initRoutes();
-        this.phones = [];
     }
     
     initRoutes () {
-        this.router.post("/", async(req, res) => {
+        this.router.post("/phones", async(req, res) => {
             try {
                 const body = req.body
                 const curretFile = JSON.parse(readFile(filePath));
@@ -27,14 +26,14 @@ class Routes {
                         console.log("Success!!")
                     }
                 })
-                res.json(fileX)
+                res.send(fileX)
             } catch (err) {
                 console.error(err);
                 res.json(err);
         }
         });
 
-        this.router.get('/phones', async (req, res) => {
+        this.router.get('/', async (req, res) => {
             try {
                 const file = await readFile(filePath, "utf-8");
                 const phonesFromFile = JSON.parse(file)
