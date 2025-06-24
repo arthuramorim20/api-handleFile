@@ -1,21 +1,34 @@
 import { Client } from "pg";
 import dotenv from 'dotenv'
 
-dotenv.config();
+class connectDatabase {
+    constructor () {
+        dotenv.config();
+        this.connect();
+    }
 
-const conn = new Client({
-    user: process.env.USER_DB,
-    password: process.env.PASSWORD,
-    port: process.env.PORT,
-    host: process.env.HOST
-});
+    connect() {
+        const client = new Client({
+            user: process.env.USER_DB,
+            password: process.env.PASSWORD,
+            port: process.env.PORT,
+            host: process.env.HOST
+        });
+        client.connect()
+            .then(() => console.log('Deu certo'))
+            .catch(err => console.error(err));
+    }
+
+}
+
+const Database = new connectDatabase;
 
 
-conn.connect()
-    .then(() => console.log('Deu certo'))
-    .catch(err => console.error(err));
 
-export default conn;
+
+
+
+export default Database;
 
 
 
