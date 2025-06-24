@@ -45,7 +45,6 @@ class Routes {
     }
 }
 
-const fnRoutes = new Routes();
-const fnMain = fnRoutes.router;
+const fnRoutes = new Routes;
 
-export default fnMain;
+export default fnRoutes;

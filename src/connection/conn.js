@@ -25,10 +25,4 @@ const Database = new connectDatabase;
 
 
 
-
-
-
 export default Database;
-
-
-
